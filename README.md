@@ -16,6 +16,7 @@ Ensure you have Python installed. Then, install the required packages:
 
 ```bash
 pip install opencv-python numpy mss pynput matplotlib
+```
 
 ### A few notes if you want to run the program yourself:
 1. The colors might appear slightly differently on your machine, so use pick_color.py to see how opencv samples the HSV colors of your display, and then change the bounds on LOWER_BLUE, UPPER_BLUE, LOWER_GREEN, and UPPER_GREEN.
