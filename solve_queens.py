@@ -14,7 +14,7 @@ SCALING_FACTOR = 0.5 # depending on your display, might need to change this
 DELAY = 0.1 # any less than this will cause a blank queens result, as it can't display a 0:00 time
 
 mouse = Controller()
-directory = f"outputs{int(time.time())}"
+directory = f"outputs/output{int(time.time())}"
 os.mkdir(directory)
 
 # SOME MOUSE STUFF
@@ -55,6 +55,7 @@ with mss.mss() as sct:
             filename = os.path.join(directory, f"screenshot.png")
             cv2.imwrite(filename, img)
             print("✅ Queens Board Detected")
+            start = time.time()
             break
         elif not board_detected:
             print("⛔ No board detected.")
@@ -194,3 +195,6 @@ def solve_queen():
 
 # RUN
 solve_queen()
+end = time.time()
+
+print(f"Total runtime of the program is {end - start} seconds")
